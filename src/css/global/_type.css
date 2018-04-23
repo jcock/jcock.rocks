@@ -3,7 +3,7 @@
 @import "_variables.css";
 
 h1, h2, h3, h4, h5, h6 {
-    /*!critical*/
+  /*!critical*/
 	font-family: var(--headingsFontFamily);
 	font-weight: var(--headingsFontWeight);
 	line-height: var(--headingsLineHeight);
@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    /*!critical*/
+  /*!critical*/
 	font-size: var(--fontSizeH1);
 	margin-bottom: 1.5rem;
 }
