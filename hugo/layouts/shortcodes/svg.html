@@ -1,0 +1,21 @@
+<!--
+	###########################
+	# SVG Icons (From sprite) #
+	###########################
+
+	## README:
+
+	Takes a svg-symbol id and an optional class and outputs an svg-icon via `use`
+
+	### USAGE
+
+	< svg
+        id="horns"
+        class="icn--horns" >
+-->
+
+<svg {{ with .Get "class" }}class="icn {{ . }}"{{ end }} role="img" aria-label="{{ .Get "id" }}">
+	<use xlink:href="img/sprite.symbol.svg#{{ .Get "id" }}" />
+</svg>
+
+

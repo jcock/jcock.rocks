@@ -47,7 +47,7 @@ This project depends on [NodeJS](http://nodejs.org/) being installed on your mac
 
 To initiate a new site, run:
 
-1. `git clone https://github.com/felics/blaupause project`
+1. `git clone https://github.com/jcock/jcock.rocks project`
 1. `cd project`
 1. `npm install`
 1. `npm start`

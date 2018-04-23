@@ -30,12 +30,12 @@
   <body>
     <a id="top"></a>
     <div class="page">
-        <main id="content" class="main" role="main" aria-label="Content">
-            {{ block "main" . }}{{ end }}
-        </main>
+      <main id="content" class="main" role="main" aria-label="Content">
+          {{ block "main" . }}{{ end }}
+      </main>
 
-        {{ partialCached "footer.html" . }}
-        {{ partial "util/scripts.html" . }}
+      {{ partialCached "footer.html" . }}
     </div>
+    {{ partial "util/scripts.html" . }}
   </body>
 </html>
