@@ -1,0 +1,82 @@
+/* Animation
+ * ------------------------------*/
+ /*.animated {
+	animation-duration: .6s;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}*/
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fade-in-up ease-in-out var(--transitionTimingMed) forwards;
+}
+
+.invisible {
+    animation: fade-out-down ease-in-out var(--transitionTimingMed) forwards;
+}
+
+ /* FADE */
+@keyframes fade-in {
+    /*!critical*/
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+}
+
+@keyframes fade-out-down {
+    100% {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+}
+
+
+/* Wink */
+@keyframes winkEyebrow {
+  5% {
+      transform: rotate(10deg);
+			transform-origin: 2% 95%;
+  }
+	8%, 100% {
+      transform: rotate(0);
+			transform-origin: 2% 95%;
+  }
+}
+
+@keyframes eyebarForward {
+  5% {
+      transform: rotate(45deg);
+			transform-origin: 45% 45%;
+  }
+	8%, 100% {
+      transform: rotate(0);
+			transform-origin: 45% 45%;
+  }
+}
+
+@keyframes eyebarBack {
+  5% {
+      transform: rotate(-50deg);
+			transform-origin: 55% 55%;
+  }
+	8%, 100% {
+      transform: rotate(0);
+			transform-origin: 45% 45%;
+  }
+}
+
+
+/* Blink */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,10 @@
+<li class="list--item" itemscope itemtype="http://schema.org/SoftwareApplication">
+    <a href="{{.URL}}" itemprop="url">
+        <h3 itemprop="name" class="item--title">{{ .Title }}</h3>
+        
+        <div class="item--details">
+            <span itemprop="date">{{ .Params.year }}</span> / <span itemprop="name">{{ .Params.client }}</span>
+            <span class="item--link">View case study</span>
+        </div>
+    </a>
+</li>

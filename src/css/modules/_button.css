@@ -1,0 +1,44 @@
+.btn {
+	background-color: var(--blackOff);
+	color: var(--white);
+	display: inline-block;
+	font-family: var(--fontSansSerif);
+	font-size: var(--fontSizeSm);
+	font-weight: 600;
+	padding: 0.75rem 1rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: 
+		background-color var(--transitionTimingBase) ease-in-out,
+		color var(--transitionTimingBase) ease-in-out;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: var(--grayLightest);
+		color: var(--blackOff);
+	}
+}
+
+.btn--close {
+	background-color: transparent;
+	color: rgba(0,0,0,0.50);
+	position: fixed;
+	right: 1vw;
+	top: 1vw;
+	z-index: 101;
+
+	& .icn--times {
+		width: 1.5rem;
+		height: 1.5rem;
+		transition: fill var(--transitionTimingBase) ease-in-out;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: transparent;
+		color: rgba(0,0,0,0.9);
+	}
+}
+

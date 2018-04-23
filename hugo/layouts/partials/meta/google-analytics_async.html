@@ -1,0 +1,16 @@
+{{ with .Site.Params.googleAnalytics }}
+{{/* <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', '{{ . }}', 'auto');
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+{{ end }} */}}
+
+
+<script src="https://cdn.jsdelivr.net/ga-lite/latest/ga-lite.min.js" async></script>
+<script>
+	var galite = galite || {};
+	galite.UA = '{{ . }}'; // Insert your tracking code here
+</script>
+{{ end }}

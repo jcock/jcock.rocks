@@ -1,0 +1,84 @@
+<!--
+#####################
+# Responsive Images #
+#####################
+
+## README:
+
+Allows browser to load a different image based on screen width and device pixel density. This allows for a smaller file size and better load performance when users are on a lower capacity device. Uses images generated in the gulp build script. Some browsers don't support <picture> and will load the fallback <img>; see browser support: http://caniuse.com/#feat=picture
+
+### Useage
+
+< figure
+        srcLq="https://unsplash.it/320/240?image=1062"
+        src="https://unsplash.it/960/720?image=1062"
+        srcXxl="https://unsplash.it/1920/1440?image=1071"
+        srcXxl2x="https://unsplash.it/2560/2880?image=1071"
+        srcXl="https://unsplash.it/1440/1080?image=1073"
+        srcXl2x="https://unsplash.it/2880/2160?image=1073"
+        srcLg="https://unsplash.it/960/720?image=1072"
+        srcLg2x="https://unsplash.it/1920/1440?image=1072"
+        srcMd="https://unsplash.it/640/480?image=1070"
+        srcMd2x="https://unsplash.it/1280/960?image=1070"
+        srcSm="https://unsplash.it/320/240?image=1074"
+        srcSm2x="https://unsplash.it/640/480?image=1074"
+        class="cool"
+        aspectRatio="4by3"
+        link="http://jcock.rocks"
+        title="This is awesome"
+        caption="When you create your own Branded Short Domain, you can expect to see up to a 34% increase in CTR when compared to standard bit.ly links." >
+-->
+
+<figure {{ with .Get "class" }}class="{{ . }}" {{ end }}>
+	{{ with .Get "link" }}<a href="{{ . }}">{{ end }}
+	<picture>
+		{{ if .Get "srcXxl" }}
+		<source
+			media="(min-width: 1920px)"
+			data-srcset="{{ .Get "srcXxl" }} 1x,
+			{{ .Get "srcXxl2x" }} 2x">
+		{{ end }}
+		{{ if .Get "srcXl" }}
+		<source
+			media="(min-width: 1440px)"
+			data-srcset="{{ .Get "srcXl" }} 1x,
+			{{ .Get "srcXl2x" }} 2x">
+		{{ end }}
+		{{ if .Get "srcLg" }}
+		<source
+			media="(min-width: 1200px)"
+			data-srcset="{{ .Get "srcLg" }} 1x,
+			{{ .Get "srcLg2x" }} 2x">
+		{{ end }}
+		{{ if .Get "srcMd" }}
+		<source
+			media="(min-width: 1024px)"
+			data-srcset="{{ .Get "srcMd" }} 1x,
+			{{ .Get "srcMd2x" }} 2x">
+		{{ end }}
+		{{ if .Get "srcSm" }}
+		<source
+			media="(min-width: 640px)"
+			data-srcset="{{ .Get "srcSm" }} 1x,
+			{{ .Get "srcSm2x" }} 2x">
+		{{ end }}
+		<img
+			srcset="{{ .Get "srcLq" }}"
+			data-srcset="{{ .Get "src" }} 1x,
+			{{ .Get "src" }} 2x"
+			alt="{{ .Get "alt" }}" {{ with .Get "class" }}class="{{ . }}--img img lazyload  blur-up" {{ end }}>
+	</picture>
+	{{ if .Get "link" }}</a>{{ end }}
+  	{{ if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
+	<figcaption {{ with .Get "class" }}class="{{ . }}--figcaption" {{ end }}>
+		{{ if isset .Params "title" }}
+			<header><b>{{ .Get "title" }}</b></header>{{ end }} {{ if or (.Get "caption") (.Get "attr")}}
+			<small>{{ .Get "caption" }}
+				{{ with .Get "attrlink" }}<a href="{{ . }}"> {{ end }}
+				{{ .Get "attr" }}
+				{{ if .Get "attrlink"}}</a> {{ end }}
+			</small>
+		{{ end }}
+	</figcaption>
+	{{ end }}
+</figure>

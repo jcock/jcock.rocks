@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <title>{{ block "title" . }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+    <meta name="keywords" content="{{ if .Keywords }}{{ delimit .Keywords ", " }}{{ else if and .IsPage .Params.tags }}{{ delimit .Params.tags ", " }}{{ else }}{{ range $term, $val := .Site.Taxonomies.categories }}{{ lower (humanize $term) }}, {{ end }}{{ end }}">
+
+    {{ partial "meta/name-author.html" . }}
+    {{ partial "meta/opengraph.html" . }}
+
+    {{ partialCached "meta/site-verification.html" . }}
+    {{ partial "meta/google-analytics_async.html" . }}
+
+    {{ partialCached "meta/favicon.html" . }}
+
+    {{ partialCached "util/loadcss.html" . }}
+    {{ partial "util/criticalstyles.html" . }}
+    <style>.page { opacity: 0; }</style>
+    {{ partialCached "util/styles.html" . }}
+
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="preconnect" href="{{ .Site.BaseURL }}">
+  </head>
+  <body>
+    <a id="top"></a>
+    <div class="page">
+        <main id="content" class="main" role="main" aria-label="Content">
+            {{ block "main" . }}{{ end }}
+        </main>
+
+        {{ partialCached "footer.html" . }}
+        {{ partial "util/scripts.html" . }}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+.page {
+	/*!critical*/
+    opacity: 0;
+    animation: fade-in cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s forwards;
+}

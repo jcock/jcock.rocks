@@ -1,0 +1,48 @@
+title = "Jason Cockerham 🤘 Designer and Developer" #💩 🤖 🖕 🤘#
+baseURL = "https://jcock.rocks/"
+languageCode =  "en-us"
+defaultContentLanguage = "en"
+
+metaDataFormat = "toml"
+
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+disableHugoGeneratorInject = true
+relativeURLs = true
+canonifyURLS = false
+enableRobotsTXT = true
+enableEmoji = true
+
+SectionPagesMenu = "main"
+
+[permalinks]
+	thoughts = "/:section/:year/:month/:day/:slug/"
+
+[Params]
+	url = "http://jcock.rocks/"
+	description = "The portfolio of Jason Cockerham, User Experience Designer and Front-End Developer."
+	copyrightOwner = "Jason Cockerham"
+	image = "img/og.jpg"
+	googleAnalytics = "UA-54478957-1"
+	show_menu = true
+	fbAppId = "103751713080205"
+
+[Params.author]
+	name = "Jason Cockerham"
+	website = "http://jcock.rocks"
+	email = "jason@jcock.rocks"
+	codepen = "jcock"
+	facebook = "jcock"
+	github = "jcock"
+	instagram = "jc0ck"
+	linkedin = "/in/jasoncockerham"
+	twitter = "jcock"
+
+[Params.seo.webmaster_verifications]
+	google = "CqIX8qMP-9YzT5j6O2ITwq-p0RpcxkbA3UZeEwZcRJw"
+	bing = "D5EB4D7B4B2096C374CE2AEB1D6EDB32"
+
+# -----------------------------
+# DO NOT CHANGE BELOW THIS LINE
+# -----------------------------
+disableLiveReload = true
+watch = false

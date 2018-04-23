@@ -1,0 +1,21 @@
+/* Lazyload
+ * ------------------------------*/
+.lazyload  {
+	opacity: 0.25;
+	transition: opacity var(--transitionTimingBase) ease;
+
+	&[data-loaded="true"] {
+		opacity: 1;
+		transition: opacity var(--transitionTimingBase) ease;
+	}
+}
+
+.blur-up {
+    filter: blur(5px);
+    transition: all var(--transitionTimingBase) ease-in-out;
+
+    &[data-loaded="true"] {
+        filter: blur(0);
+    	transition: all var(--transitionTimingBase) ease-in-out;
+    }
+}

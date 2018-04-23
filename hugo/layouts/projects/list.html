@@ -1,0 +1,12 @@
+{{ define "main" }}
+<section class="section section--half section--jumbotron">
+  <div class="section--content">
+    <h1 class="section--title">Some things I’ve made.</h1>
+  </div>
+</section>
+<ul class="projects list--projects">
+  {{ range .Data.Pages.ByWeight.Reverse }}
+    {{ .Render "li"}}
+  {{ end }}
+</ul>
+{{ end }}

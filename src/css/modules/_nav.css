@@ -1,0 +1,125 @@
+.skip {
+    /*!critical*/
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	white-space: nowrap;
+	clip-path: inset(50%);
+	border: 0;
+
+	&:active,
+	&:focus {
+		position: static;
+		width: auto;
+		height: auto;
+		overflow: visible;
+		clip: auto;
+		white-space: normal;
+		clip-path: none;
+	}
+}
+
+.nav {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	align-content: end;
+	justify-content: stretch;
+	padding: 2.5vh 0 0;
+	margin: 5vh auto calc(var(--navToggleSize) + 1.25vh);
+	width: 90%;
+	overflow: hidden;
+	border-top: 1px solid var(--grayLighter);
+	-webkit-overflow-scrolling: touch;
+
+	@media (--minMd) {
+		width: 50%;
+	}
+}
+
+.menu {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr;
+	justify-content: center;
+	align-content: center;
+
+	@media (--minMd) {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 1fr;
+	}
+
+	& li:nth-of-type(1) {
+		grid-column: 1;
+	}
+
+	& li:nth-of-type(2) {
+		grid-column: 2;
+	}
+
+	& li:nth-of-type(3) {
+		grid-column: 3;
+	}
+
+	& li:nth-of-type(4) {
+		grid-column: 4;
+	}
+
+	& .github {
+		width: 1rem;
+		height: calc(1rem * 0.979166667);
+	}
+
+	& .linkedin {
+		width: 1rem;
+		height: 1rem;
+	}
+
+	& .instagram {
+		width: 1rem;
+		height: 1rem;
+	}
+
+	& .email {
+		width: 1rem;
+		height: calc(1rem * 0.66666667);
+	}
+}
+
+.menu--item__link {
+	position: relative;
+	display: block;
+	padding: 1.5vh 0.75rem;
+	line-height: 1;
+	color: var(--blackOff);
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	transition: color var(--transitionTimingBase) ease-in-out;
+	will-change: color;
+
+	& .github,
+	& .linkedin,
+	& .instagram,
+	& .email {
+		fill: var(--grayDark);
+		transition: fill var(--transitionTimingBase) ease-in-out;
+		will-change: fill;
+	}
+
+	&:hover,
+	&:focus {
+		& .github,
+		& .linkedin,
+		& .instagram,
+		& .email {
+			fill: var(--grayLight);
+		}
+	}
+}

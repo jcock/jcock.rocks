@@ -1,0 +1,27 @@
+.footer {
+	display: grid;
+	align-content: center;
+	justify-items: center;
+	position: relative;
+	z-index: 100;
+	overflow: hidden;
+	color: var(--black);
+	text-align: center;
+	background-color: var(--white);
+	border-top: 1px solid var(--grayLighter);
+
+	&.section {
+		grid-template-columns: 1fr;
+	}
+
+	& a[data-scroll] {
+		display: inline-block;
+	}
+
+	& .icn--jcock {
+		height: 15vh;
+		width: calc(15vh * 1.307);
+		fill: var(--black);
+		will-change: opacity, transform;
+	}
+}

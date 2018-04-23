@@ -1,0 +1,23 @@
+<section class="section section--work" id="work">
+	<h1 class="section--label" data-scroll>Work.</h1>
+	<div class="section--content">
+		<h2 class="section--title">Things I’ve made.</h2>
+		<ol class="list--work">
+			{{ range (where .Data.Pages.ByWeight.Reverse "Section" "projects") }}
+				{{ .Render "li"}}
+			{{ end }}
+		</ol>
+		<h2 class="section--title">A little recognition.</h2>
+		<ul class="list--awards">
+			<li class="list--item">
+				{{ partial "media/svg" (dict "id" "award-webby" "class" "icn icn--award_webby") }}
+			</li>
+			<li class="list--item">
+				{{ partial "media/svg" (dict "id" "award-aaa" "class" "icn icn--award_aaa") }}
+			</li>
+			<li class="list--item">
+				{{ partial "media/svg" (dict "id" "award-webaward" "class" "icn icn--award_web") }}
+			</li>
+		</ul>
+	</div>
+</section>

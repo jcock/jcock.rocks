@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <article class="post--project" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+		<a href="/" class="btn btn--close"><svg class="icn icn--times" role="img" aria-label="close"><use xlink:href="/img/sprite.svg#times"></use></svg></a>
+
+		<header class="section section--half post--jumbotron" style="background-color: {{ .Params.primary_color }}">
+		  <div class="section--content">
+		    <h1 class="project--title">{{ .Title }}</h1>
+				<h2 class="project--client">{{ .Params.client }}</h2>
+		  </div>
+		</header>
+	  <main class="post--body" itemprop="articleBody">
+			<figure class="post--img__featured img img--full" itemscope itemtype="http://schema.org/ImageObject">
+				<img src="https://res.cloudinary.com/jcock-rocks/image/upload/q_auto:low,w_auto,dpr_auto,f_auto,c_scale/{{ .Params.featured_image }}"
+					data-src="https://res.cloudinary.com/jcock-rocks/image/upload/w_auto,dpr_auto,q_auto:best,f_auto,c_scale/{{ .Params.featured_image }}"
+					alt="{{ .Params.Title }}" class="cld-responsive lazyload blur-up" />
+			</figure>
+
+			<div class="post--meta{{ if .Params.url_external }} post--meta_w-link{{ end }}" style="background-color: {{ .Params.primary_color }}">
+				<p class="meta--year">{{ .Params.year }}</p>
+
+				<ul class="meta--roles list-unstyled">
+						{{ range sort .Params.roles }}<li class="role">{{ . }}</li>{{ end }}
+				</ul>
+
+				{{ if .Params.url_external }}
+					<a href="{{ .Params.url_external }}">View project</a>
+				{{ end }}
+			</div>
+			<hr class="fancy">
+			<p class="lead">{{ .Params.short_description }}</p>
+
+	  	  {{ .Content }}
+	    </main>
+    </article>
+{{ end }}

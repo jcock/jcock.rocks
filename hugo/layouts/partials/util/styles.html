@@ -1,0 +1,6 @@
+<!-- <link rel="preload" href="/css/app.css" as="style" onload="this.rel='stylesheet'"> -->
+<script id="loadcss">
+	// load a CSS file just before the script element containing this code
+	loadCSS( "{{ "css/main.css" | relURL }}", document.getElementById("loadcss") );
+</script>
+<noscript><link rel="stylesheet" href="{{ "css/main.css" | relURL }}"></noscript>

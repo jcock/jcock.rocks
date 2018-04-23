@@ -1,0 +1,46 @@
+<!--
+#####################
+# Responsive Images #
+#####################
+
+## README:
+
+Allows browser to load a different image based on screen width and device pixel density. This allows for a smaller file size and better load performance when users are on a lower capacity device. Uses images generated in the gulp build script. Some browsers don't support <picture> and will load the fallback <img>; see browser support: http://caniuse.com/#feat=picture
+
+### Useage
+
+< image
+        src="v1505324744/me-trolley_apn4ct.jpg"
+        class="cool"
+        link="http://jcock.rocks"
+        title="This is awesome"
+        caption="This is an awesome image"
+        alt="A really cool image" >
+-->
+
+<figure {{ with .Get "class" }}class="{{ . }} img figure--img" {{ end }}>
+	{{ with .Get "link" }}<a href="{{ . }}">{{ end }}
+		<img
+			src="https://res.cloudinary.com/jcock-rocks/image/upload/q_auto:low,w_auto,dpr_auto,f_auto,c_scale/{{ .Get "src" }}"
+			data-src="https://res.cloudinary.com/jcock-rocks/image/upload/w_auto,dpr_auto,q_auto,f_auto,c_scale/{{ .Get "src" }}"
+			 {{ if or (.Get "alt") (.Get "caption") }}
+			 	alt="{{ with .Get "alt"}}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"
+			{{ end }}
+			{{ with .Get "class" }}
+				class="img cld-responsive lazyload blur-up"
+			{{ end }}
+		/>
+	{{ if .Get "link" }}</a>{{ end }}
+	{{ if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
+	<figcaption {{ with .Get "class" }}class="{{ . }}--figcaption" {{ end }}>
+		{{ if isset .Params "title" }}
+			<header><b>{{ .Get "title" }}</b></header>{{ end }} {{ if or (.Get "caption") (.Get "attr")}}
+			<small>{{ .Get "caption" }}
+				{{ with .Get "attrlink" }}<a href="{{ . }}"> {{ end }}
+				{{ .Get "attr" }}
+				{{ if .Get "attrlink"}}</a> {{ end }}
+			</small>
+		{{ end }}
+	</figcaption>
+	{{ end }}
+</figure>

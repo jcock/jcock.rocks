@@ -1,0 +1,88 @@
+.page--error {
+    display: grid;
+	align-items: center;
+    align-content: center;
+	justify-items: center;
+    overflow: hidden;
+	height: 100vh;
+    text-align: center;
+    color: var(--white);
+    background-color: var(--grayDarkest);
+
+    & .page--content {
+	    padding: 1rem;
+
+        @media (--minMd) {
+	        padding: 5vh 1rem;
+    	}
+    }
+
+    & .error--title {
+    	margin: 0;
+    }
+
+    & .error--message {
+    	margin: 0;
+    	font-size: 0.875rem;
+    	font-weight: 400;
+    }
+
+    & a {
+        color: inherit;
+    }
+
+    & .face {
+    	grid-row: 1;
+    	width: 95vw;
+    	height: 95vw;
+    	fill: var(--black);
+
+    	@media (--minSm) {
+    		width: 75vw;
+    		height: 75vw;
+    	}
+
+    	@media (--minMd) {
+    		width: 50vw;
+    		height: 50vw;
+    	}
+    }
+
+    & .eyebarForward {
+    	animation: eyebarForward 4s ease-in-out both infinite;
+    }
+
+    & .eyebarBack {
+    	animation: eyebarBack 4s ease-in-out both infinite;
+    }
+
+    & .winkEyebrow {
+    	animation: winkEyebrow 4s ease-in-out both infinite;
+    }
+
+    & .cloud {
+    	fill: var(--white);
+    	opacity: 0.025;
+    }
+
+    & .dots,
+    & .circles,
+    & .pluses,
+    & .times {
+    	fill: var(--white);
+    	opacity: 0.1;
+    	animation: blink 2s ease-in-out both infinite;
+    }
+
+    & .circles {
+    	animation-delay: 0.5s;
+    }
+
+    & .pluses {
+    	animation-delay: 1s;
+    }
+
+    & .times {
+    	animation-delay: 1.5s;
+    }
+}

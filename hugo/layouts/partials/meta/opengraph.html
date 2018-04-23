@@ -1,0 +1,6 @@
+<meta property="og:url" content="{{ .Site.Params.Url }}">
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ .Site.Title }}" />
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.image }}">
+<meta property="fb:app_id" content="{{ .Site.Params.fbAppId }}" />
