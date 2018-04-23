@@ -1,22 +1,22 @@
 <nav id="nav" role="navigation" class="nav" aria-hidden="true">
 	<ul class="menu" role="menubar" aria-orientation="vertical">
 		<li class="menu--item" role="presentation">
-			<a href="https://github.com/jcock" title="Follow me on Github" role="menuitem" class="menu--item__link">
+			<a href="https://github.com/{{ .Site.Params.author.github }}" title="Follow me on Github" role="menuitem" class="menu--item__link">
 					{{ partial "media/svg" (dict "id" "github" "class" "github") }}
 				</a>
 		</li>
 		<li class="menu--item" role="presentation ">
-			<a href="http://www.linkedin.com/in/jasoncockerham" title="Connect with me on LinkedIn" role="menuitem" class="menu--item__link">
+			<a href="http://www.linkedin.com{{ .Site.Params.author.linkedin }}" title="Connect with me on LinkedIn" role="menuitem" class="menu--item__link">
 					{{ partial "media/svg" (dict "id" "linkedin" "class" "linkedin") }}
 				</a>
 		</li>
 		<li class="menu--item" role="presentation">
-			<a href="https://www.instagram.com/jc0ck/" title="Follow me on Instagram" role="menuitem" class="menu--item__link">
+			<a href="https://www.instagram.com/{{ .Site.Params.author.instagram }}" title="Follow me on Instagram" role="menuitem" class="menu--item__link">
 					{{ partial "media/svg" (dict "id" "instagram" "class" "instagram") }}
 				</a>
 		</li>
 		<li class="menu--item" role="presentation">
-			<a href="mailto:jason@jcock.rocks" title="jason@jcock.rocks" role="menuitem" class="menu--item__link">
+			<a href="mailto:{{ .Site.Params.author.email }}" title="{{ .Site.Params.author.email }}" role="menuitem" class="menu--item__link">
 					{{ partial "media/svg" (dict "id" "email" "class" "email") }}
 				</a>
 		</li>
