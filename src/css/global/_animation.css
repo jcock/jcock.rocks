@@ -1,11 +1,5 @@
 /* Animation
  * ------------------------------*/
- /*.animated {
-	animation-duration: .6s;
-	animation-fill-mode: both;
-	animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}*/
-
 .visible {
     opacity: 1;
     transform: translateY(0);
@@ -38,6 +32,13 @@
     }
 }
 
+
+/* Hover */
+@keyframes hover {
+  50% {
+      transform: translateY(3px);
+  }
+}
 
 /* Wink */
 @keyframes winkEyebrow {

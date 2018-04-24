@@ -48,7 +48,11 @@
     	}
     }
 
-    & .eyebarForward {
+    & .beat {
+    	animation: hover 3s ease-in-out both infinite;
+    }
+
+    /* & .eyebarForward {
     	animation: eyebarForward 4s ease-in-out both infinite;
     }
 
@@ -58,7 +62,7 @@
 
     & .winkEyebrow {
     	animation: winkEyebrow 4s ease-in-out both infinite;
-    }
+    } */
 
     & .cloud {
     	fill: var(--white);

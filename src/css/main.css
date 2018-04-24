@@ -24,12 +24,16 @@
  * ------------------------------*/
 @import "modules/_button.css";
 @import "modules/_page.css";
-@import "modules/_error.css";
 @import "modules/_nav.css";
 @import "modules/_footer.css";
 @import "modules/_section.css";
 @import "modules/_posts.css";
 @import "modules/_instafeed.css";
+
+
+/* MODULE STYLES
+ * ------------------------------*/
+ @import "pages/_error.css";
 
 
 /* PRINT
