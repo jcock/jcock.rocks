@@ -5,6 +5,11 @@
 					{{ partial "media/svg" (dict "id" "github" "class" "github") }}
 				</a>
 		</li>
+		<li class="menu--item" role="presentation">
+			<a href="https://dribbble.com/{{ .Site.Params.author.dribbble }}" title="Follow me on Dribbble" role="menuitem" class="menu--item__link">
+					{{ partial "media/svg" (dict "id" "dribbble" "class" "dribbble") }}
+				</a>
+		</li>
 		<li class="menu--item" role="presentation ">
 			<a href="http://www.linkedin.com{{ .Site.Params.author.linkedin }}" title="Connect with me on LinkedIn" role="menuitem" class="menu--item__link">
 					{{ partial "media/svg" (dict "id" "linkedin" "class" "linkedin") }}
