@@ -3,3 +3,17 @@
     opacity: 0;
     animation: fade-in cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s forwards;
 }
+
+.a-fade {
+    transition: .4s;
+    opacity: 1;
+}
+html.is-animating .a-fade{
+    opacity: 0;
+}
+.loading {
+    display: none;
+}
+html.is-changing .loading{
+    display: block;
+}

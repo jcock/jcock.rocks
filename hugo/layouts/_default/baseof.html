@@ -29,13 +29,14 @@
   </head>
   <body>
     <a id="top"></a>
-    <div class="page">
-      <main id="content" class="main" role="main" aria-label="Content">
+    <div class="a-fade">
+      <main id="swup" class="main" role="main" aria-label="Content">
           {{ block "main" . }}{{ end }}
       </main>
 
       {{ partialCached "footer.html" . }}
     </div>
+    <div class="loading">We are loading...</div>
     {{ partial "util/scripts.html" . }}
   </body>
 </html>
