@@ -9,13 +9,13 @@ import { info } from './utils/debug';
 import Lazyload from './modules/lazyload';
 import ScrollTo from './modules/scrollto';
 import ScrollAnimation from './modules/scrollanimation';
-import Instagram from './modules/instafeed';
+// import Instagram from './modules/instafeed';
 
 function onReady(e) {
   registerServiceWorker();
 	info(`Event: ${e.type}`, `Datestamp: ${this.date}`);
 	Lazyload();
-	Instagram();
+	// Instagram();
 	ScrollTo();
 	ScrollAnimation();
 }
